@@ -6,9 +6,10 @@ using UnityEngine;
 public class ShootingController2D : MonoBehaviour
 {
     public GameObject projectilePref;
-    public float speed = 10f;
+    public float fireForce = 10f;
     private Vector3 mousePosition;
     private Vector3 mouseDirection;
+    public Transform muzzle_1;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +18,19 @@ public class ShootingController2D : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        //mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Debug.Log("mousepos: " + mousePosition);
-        mouseDirection = (mousePosition - transform.position).normalized;
+    {       
         if (Input.GetMouseButtonDown(0))
-        {            
-            GameObject projectile = Instantiate(projectilePref, transform.position, transform.rotation) as GameObject;
-            projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(mouseDirection.x * speed, mouseDirection.y * speed);
+        {
+            Shoot();
         }
+    }
+   
+
+    private void Shoot()
+    {
+        GameObject projectile = Instantiate(projectilePref, muzzle_1.position, muzzle_1.rotation) as GameObject;
+        //projectile.GetComponent<Rigidbody2D>().AddForce(muzzle_1.up * fireForce, ForceMode2D.Impulse);
+        projectile.GetComponent<Rigidbody2D>().velocity = muzzle_1.up * fireForce;
+
     }
 }

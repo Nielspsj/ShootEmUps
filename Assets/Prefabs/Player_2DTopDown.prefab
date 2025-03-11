@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8828161670729471937}
   - component: {fileID: 1856012750775409542}
   - component: {fileID: 7784380512550754561}
+  - component: {fileID: 5632717776016151313}
   m_Layer: 0
   m_Name: Player_2DTopDown
   m_TagString: Player
@@ -35,6 +36,7 @@ Transform:
   m_Children:
   - {fileID: 2652794093885108499}
   - {fileID: 5441837014018340772}
+  - {fileID: 2630358289940682615}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7195964131248428520
@@ -173,6 +175,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e30b6382813e464492082886a47f242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5632717776016151313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3283361972035886327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343888ca2d6941e4aae8a646b79cb212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePref: {fileID: 1559392500483447065, guid: dff13c8fdc3f9f642b544a46eb2fb10d, type: 3}
+  fireForce: 10
+  muzzle_1: {fileID: 2630358289940682615}
 --- !u!1 &6924562680945755900
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,6 +216,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5218051780975536213}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8527579265494488203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2630358289940682615}
+  m_Layer: 0
+  m_Name: Muzzle_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2630358289940682615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527579265494488203}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.561, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
