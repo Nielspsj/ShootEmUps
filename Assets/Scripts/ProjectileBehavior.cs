@@ -10,5 +10,15 @@ public class ProjectileBehavior : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, lifetime);
-    }    
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //If we hit an obstacle, destroy the projectile.
+        //To prevent it getting destroyed as it spawns?
+        if(collision.transform.tag == "Obstacle")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

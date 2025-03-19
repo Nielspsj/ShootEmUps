@@ -10,7 +10,7 @@ public class EnemyBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        //scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -18,9 +18,14 @@ public class EnemyBehavior : MonoBehaviour
     {
         if(health <= 0)
         {
-            scoreManager.EnemyKilled();
+            //scoreManager.EnemyKilled();
             Destroy(gameObject);
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
